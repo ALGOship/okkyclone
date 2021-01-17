@@ -7,7 +7,6 @@ spring:
   thymeleaf:
     cache: false
   jpa:
-    #database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
     hibernate:
       ddl-auto: create
@@ -17,6 +16,3 @@ spring:
     password: 1234
     driver-class-name: com.mysql.jdbc.Driver
 
-  #  mvc:
-
-#    static-path-pattern: /resources/**
