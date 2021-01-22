@@ -15,4 +15,3 @@ spring:
     username: tester
     password: 1234
     driver-class-name: com.mysql.jdbc.Driver
-
