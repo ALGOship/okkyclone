@@ -11,7 +11,6 @@ public class MainController {
 
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
     public String home() {
-        System.out.println("home access");
         return "main";
     }
 }
