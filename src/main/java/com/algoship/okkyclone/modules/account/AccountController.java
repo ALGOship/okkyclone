@@ -14,10 +14,10 @@ public class AccountController {
         return "login";
     }
 
-    @PostMapping("/sign-up")
-    public String signUpSubmit(Model model) {
-        return "login";
-    }
+//    @PostMapping("/sign-up")
+//    public String signUpSubmit(Model model) {
+//        return "login";
+//    }
 
     @GetMapping("/register")
     public String register(@RequestBody Account account) {

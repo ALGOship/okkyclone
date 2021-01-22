@@ -1,4 +1,4 @@
-package com.algoship.okkyclone.config.swagger;
+package com.algoship.okkyclone.infra.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
