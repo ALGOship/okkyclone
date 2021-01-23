@@ -29,7 +29,7 @@ public class AccountController {
     public String signIn(Model model) {
         return "login";
     }
-
+  
     @GetMapping("/sign-up")
     public String signUpForm(Model model) {
         return "sign-up";

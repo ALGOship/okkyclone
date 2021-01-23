@@ -28,6 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.csrf().disable();
 
+
         // 커스텀한 로그인 페이지를 스프링 시큐리티 로그인 창으로 보여줌
 //        http.formLogin()
 //                .loginPage("/sign-up");
