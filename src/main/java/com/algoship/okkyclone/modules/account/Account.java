@@ -31,6 +31,10 @@ public class Account {
     @Column(unique = true)
     private String nickname;
 
+    @Column(unique = true)
+    private String name;
+
+    /*
     private Boolean subscriptionYn;
 
     private Boolean agreeYn;
@@ -45,7 +49,9 @@ public class Account {
 
     private Boolean deleteYn;
 
+     */
     /* general info */
+    /*
     private Date regDt;
 
     private Date updtDt;
@@ -53,4 +59,6 @@ public class Account {
     private Long regId;
 
     private Long updtId;
+
+     */
 }

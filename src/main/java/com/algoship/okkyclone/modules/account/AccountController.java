@@ -16,7 +16,9 @@ import javax.validation.Valid;
 @RequiredArgsConstructor
 public class AccountController {
 
+    // 왜 무조건 final로 해야하는가??
     private final SignUpFormValidator signUpFormValidator;
+    private final AccountRepository accountRepository;
 
     @InitBinder("signUpForm")
     public void initBinder(WebDataBinder webDataBinder) {
@@ -38,6 +40,16 @@ public class AccountController {
         if (errors.hasErrors()) {
             return "sign-up";
         }
+        
+        Account account = Account.builder()
+                .userId(signUpForm.getUserId())
+                .email(signUpForm.getEmail())
+                .name(signUpForm.getName())
+                .nickname(signUpForm.getNickname())
+                .password(signUpForm.getPassword())
+                .build();
+
+        accountRepository.save(account);
 
         // 가입 완료
         return "redirect:/";
