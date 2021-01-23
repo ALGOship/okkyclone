@@ -30,7 +30,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // security 에서 post 요청은 보안을 위해 csrf 토큰을 사용함. 나중에 설정하고 일단 비활성화 시킴
         http.csrf().disable();
 
-
         // 커스텀한 로그인 페이지를 스프링 시큐리티 로그인 창으로 보여줌
         http.formLogin()
                 .loginPage("/user/sign-in")      // 커스텀 로그인 페이지 설정

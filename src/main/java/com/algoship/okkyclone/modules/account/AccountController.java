@@ -33,7 +33,6 @@ public class AccountController {
     @PostMapping("/sign-in")
     public String signUpSubmit(@RequestBody String username, String password) {
         System.out.println("input info : "+ username + ","+password);
-
         return "redirect:/";
     }
 
@@ -61,7 +60,7 @@ public class AccountController {
                 .nickname(signUpForm.getNickname())
                 .password(signUpForm.getPassword())
                 .build();
-
+      
         accountRepository.save(account);
 
         // 가입 완료
