@@ -23,8 +23,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         // 모든 사용자가 접근 가능한 경로 설정
         http.authorizeRequests()
-                .mvcMatchers("/", "/home", "/sign-up").permitAll()
+                .mvcMatchers("/", "/home", "/user/**").permitAll()
                 .anyRequest().authenticated();
+
+        http.csrf().disable();
+
 
         // 커스텀한 로그인 페이지를 스프링 시큐리티 로그인 창으로 보여줌
 //        http.formLogin()
