@@ -255,15 +255,19 @@
                     <div class="panel-heading">
                         <h5 class="panel-header">이메일로 가입하기</h5>
                     </div>
-                    <form action="/user/sign-up" method="post" class="form-signup form-user panel-body" id="loginForm" autocomplete="off">
-
+                    <form action="#" th:action="@{/user/sign-up}" th:object="${signUpForm}" method="post" class="form-signup form-user panel-body" id="loginForm" autocomplete="off">
+                        <div th:if="${param.error}" class="alert alert-danger" role="alert">
+                            <p>입력한 값이 형식과 맞지 않습니다.</p>
+                        </div>
+                    <!--<form action="#" th:action="@{/user/sign-up}" method="post" class="form-signup form-user panel-body" id="loginForm" autocomplete="off" novalidate>-->
                         <fieldset>
 
-                            <input type="text" name="userId" class="form-control input-sm" required="" placeholder="아이디" value="" id="userId">
-                            <input type="password" name="password" class="form-control input-sm" required="" placeholder="비밀번호" value="" id="password">
-                            <input type="text" name="email" class="form-control input-sm" required="" placeholder="이메일" value="" id="email">
-                            <input type="text" name="name" class="form-control input-sm" required="" placeholder="이름" value="" id="name">
-                            <input type="text" name="nickname" class="form-control input-sm" required="" placeholder="닉네임" value="" id="nickname">
+                            <input type="text" th:field="*{userId}" name="userId" class="form-control input-sm" placeholder="아이디" value="" id="userId" required minlength="1" maxlength="20">
+
+                            <input type="password" th:field="*{password}" name="password" class="form-control input-sm" placeholder="비밀번호" value="" id="password" required minlength="8" maxlength="20">
+                            <input type="text" th:field="*{email}" name="email" class="form-control input-sm" required="" placeholder="이메일" value="" id="email">
+                            <input type="text" th:field="*{name}" name="name" class="form-control input-sm" required="" placeholder="이름" value="" id="name">
+                            <input type="text" th:field="*{nickname}" name="nickname" class="form-control input-sm" placeholder="닉네임" value="" id="nickname" required minlength="1" maxlength="20">
                             <div class="checkbox">
                                 <label>
                                     <input type="checkbox" name="person.dmAllow" value="true" checked="checked"> 이메일 수신 동의

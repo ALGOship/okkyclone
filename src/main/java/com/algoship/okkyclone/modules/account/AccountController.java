@@ -26,12 +26,24 @@ public class AccountController {
     }
 
     @GetMapping("/sign-in")
-    public String signIn(Model model) {
-        return "login";
+    public String signUpForm() {
+        return "/login";
+    }
+
+    @PostMapping("/sign-in")
+    public String signUpSubmit(@RequestBody String username, String password) {
+        System.out.println("input info : "+ username + ","+password);
+        return "redirect:/";
+    }
+
+    @GetMapping("/success")
+    public String signUpSuccess() {
+        return "login-success";
     }
   
     @GetMapping("/sign-up")
     public String signUpForm(Model model) {
+        model.addAttribute("signUpForm", new SignUpForm());
         return "sign-up";
     }
 
@@ -48,7 +60,7 @@ public class AccountController {
                 .nickname(signUpForm.getNickname())
                 .password(signUpForm.getPassword())
                 .build();
-
+      
         accountRepository.save(account);
 
         // 가입 완료
@@ -57,6 +69,6 @@ public class AccountController {
 
     @GetMapping("/sign-out")
     public String logout() {
-        return "home";
+        return "/";
     }
 }
