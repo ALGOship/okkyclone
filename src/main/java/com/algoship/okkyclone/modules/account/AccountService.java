@@ -1,5 +1,6 @@
 package com.algoship.okkyclone.modules.account;
 
+import com.algoship.okkyclone.modules.account.form.SignUpForm;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,9 +14,17 @@ public class AccountService implements UserDetailsService {
 
     private final AccountRepository accountRepository;
 
-    public boolean login(String username, String password) {
-        Account account = accountRepository.findByEmail(username);
-        return account.getPassword().equals(password);
+    public void saveNewAccount(SignUpForm signUpForm) {
+
+        Account account = Account.builder()
+                .userId(signUpForm.getUserId())
+                .email(signUpForm.getEmail())
+                .name(signUpForm.getName())
+                .nickname(signUpForm.getNickname())
+                .password(signUpForm.getPassword())
+                .build();
+
+        accountRepository.save(account);
     }
 
     @Override
