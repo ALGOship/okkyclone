@@ -16,7 +16,8 @@ import javax.validation.Valid;
 @RequiredArgsConstructor
 public class AccountController {
 
-    // 왜 무조건 final로 해야하는가??
+    // 싱글톤으로 사용하려고 final 선언함
+    private final AccountService accountService;
     private final SignUpFormValidator signUpFormValidator;
     private final AccountRepository accountRepository;
 
@@ -52,18 +53,8 @@ public class AccountController {
         if (errors.hasErrors()) {
             return "sign-up";
         }
-        
-        Account account = Account.builder()
-                .userId(signUpForm.getUserId())
-                .email(signUpForm.getEmail())
-                .name(signUpForm.getName())
-                .nickname(signUpForm.getNickname())
-                .password(signUpForm.getPassword())
-                .build();
-      
-        accountRepository.save(account);
-
         // 가입 완료
+        accountService.saveNewAccount(signUpForm);
         return "redirect:/";
     }
 
