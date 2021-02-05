@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-package com.algoship.okkyclone.modules.account;public class AccountServiceTest {
-=======
-<<<<<<< HEAD
+
 package com.algoship.okkyclone.modules.account;
 
 import org.junit.jupiter.api.DisplayName;
@@ -46,9 +43,4 @@ public class AccountServiceTest {
                 .andExpect(view().name("sign-up"))
                 .andExpect(unauthenticated());
     }
-
-=======
-package com.algoship.okkyclone.modules.account;public class AccountServiceTest {
->>>>>>> 12ad2d5 (CLEANUP: 회원 가입 동작 개선, 메인 화면 유닛테스트 코드 추가)
->>>>>>> 245fdd4 (FEATURE: 회원 가입 실패 테스트 코드 추가, springboot security test gradle에 추가)
 }
