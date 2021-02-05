@@ -206,7 +206,8 @@
 <body>
 <div class="layout-container">
     <div class="main ">
-        <div class="sidebar">
+
+        <div class="sidebar ">
             <a href="javascript://" class="sidebar-header">
                 <i class="fa fa-bars sidebar-header-icon"></i>
             </a>
@@ -229,8 +230,10 @@
 
             <div class="nav-user nav-sidebar">
                 <ul class="nav nav-sidebar">
-                    <li><a href="/login/auth?redirectUrl=%2Fuser%2Fregister" class="link"><i class="fa fa-sign-in"></i> <span class="nav-sidebar-label">로그인</span></a></li>
-                    <li><a href="/user/register" class="link"><i class="fa fa-user"></i> <span class="nav-sidebar-label">회원가입</span></a></li>
+                    <!--<li><a href="/login/auth?redirectUrl=%2F" class="link"><i class="fa fa-sign-in"></i> <span class="nav-sidebar-label">로그인</span></a></li>-->
+                    <li><a href="/user/sign-in" class="link"><i class="fa fa-sign-in"></i> <span class="nav-sidebar-label">로그인</span></a></li>
+                    <!--<li><a href="/user/register" class="link"><i class="fa fa-user"></i> <span class="nav-sidebar-label">회원가입</span></a></li>-->
+                    <li><a href="/user/sign-up" class="link"><i class="fa fa-user"></i> <span class="nav-sidebar-label">회원가입</span></a></li>
                 </ul>
             </div>
 
@@ -247,6 +250,7 @@
                 <li><a href="https://github.com/okjsp/okky/issues" class="link" target="_blank"><i class="fa fa-github"></i> <span class="nav-sidebar-label nav-sidebar-category-label">Github Issues</span></a></li>
             </ul>
         </div>
+
 
         <div id="create-user" class="content" role="main">
             <h3 class="content-header">회원가입</h3>
